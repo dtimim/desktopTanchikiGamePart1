@@ -1,13 +1,15 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class Weapon {
-    private Texture texture;
+    private TextureRegion texture;
     private float firePeriod;
     private int damage;
 
-    public Texture getTexture() {
+    public TextureRegion getTexture() {
         return texture;
     }
 
@@ -19,11 +21,9 @@ public class Weapon {
         return damage;
     }
 
-    public Weapon(){
-        this.texture = new Texture("simple_weapon.png");
-        this.firePeriod = 0.1f;
+    public Weapon(TextureAtlas atlas){
+        this.texture = atlas.findRegion("simpleWeapon");
+        this.firePeriod = 0.2f;
         this.damage = 1;
     }
-
-
 }
